@@ -8,6 +8,27 @@
   src: url(./fonts/Maharlika-Regular.ttf);
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: "Maharlika";
+  margin: 20px auto 20px auto;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 50px auto 20px auto;
+  font-size: 32px;
+  text-decoration: underline;
+  text-decoration-color: #c62828;
+  text-decoration-thickness: 6px;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -125,11 +146,12 @@ li {
   flex: 1 1 0;
 }
 
-.about-bio .name {
-  font-size: 2rem;
-  margin-bottom: 6px;
-  color: #000;
-  text-align: center;
+.about-bio p {
+  color: #333;
+  margin-bottom: 18px;
+  text-align: justify;
+  font-size: 18px;
+  padding-block: 30px;
 }
 
 .about-bio .lead {
@@ -139,32 +161,21 @@ li {
   text-align: center;
 }
 
-.about-bio h2 {
-  margin-top: 18px;
-  margin-bottom: 8px;
-  padding: 10px 0;
-  text-align: center;
-  /* background-color: #00000036; */
-  color: #c62828;
-}
-
-.about-bio p {
-  line-height: 1.6;
-  margin-bottom: 50px;
-  color: #111;
-  margin-inline: 200px;
-}
-
 /* Accent link styles using red */
-a {
-  color: #000;
-}
 .about-bio a {
   color: #c62828; /* deep red accent */
   text-decoration: underline;
 }
 
+.about-container {
+  margin-inline: 10vw;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
 .about-bio .cta {
+  text-align: center;
   margin-top: 18px;
   font-weight: 600;
 }
@@ -173,23 +184,20 @@ a {
 .contact-section {
   background: #ffffff;
   color: #000;
-  padding: 60px;
+  padding: 60px 100px;
 }
 
 .contact-container {
-  /* relies on .about-container for max-width and margin; this adjusts spacing if needed */
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  width: 100%;
+  gap: 150px;
+  align-items: center;
 }
 
-.contact-info {
-  flex: 1 1 0;
-}
-
-.contact-info h2 {
-  margin-top: 20px;
+.contact-info p {
+  color: #333;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .contact-form {
@@ -203,7 +211,7 @@ a {
 }
 
 .contact-form label {
-  font-size: 0.95rem;
+  font-size: 18px;
   margin-top: 12px;
   margin-bottom: 6px;
   color: #111;
@@ -234,8 +242,7 @@ a {
 }
 
 .btn-primary {
-  display: inline-block;
-  background: #c62828; /* red */
+  background: #c62828;
   color: #fff;
   border: none;
   padding: 12px 16px;
@@ -270,20 +277,6 @@ a {
 }
 
 /* gallery styles */
-.gallery h1,
-.gallery h2 {
-  text-align: center;
-}
-
-.gallery h1 {
-  font-size: 50px;
-  font-family: "Maharlika";
-  margin: 20px auto 20px auto;
-}
-
-.gallery h2 {
-  margin: 50px auto 20px auto;
-}
 
 .secondary-nav ul {
   display: flex;
@@ -297,6 +290,7 @@ a {
 }
 
 .secondary-nav ul li a {
+  font-size: 18px;
   color: white;
   font-weight: 500;
 }
@@ -310,7 +304,8 @@ a {
 }
 
 .img-card img {
-  height: 30vh;
+  height: 30vw;
   width: 30vw;
   border-radius: 12px;
+  object-fit: cover;
 }

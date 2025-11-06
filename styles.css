@@ -283,7 +283,7 @@ li {
 
 .secondary-nav {
   position: sticky;
-  top: -5px;
+  top: 0px;
   border-bottom: 5px solid white;
   /* box-shadow: 0 2px 3px white; */
 }
@@ -293,11 +293,13 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  column-gap: 25px;
+  row-gap: 10px;
   background-image: url(./images/hero/hover-one.jpg);
   opacity: 0.95;
   background-size: cover;
   padding: 30px;
+  /* width: 100%; */
 }
 
 .secondary-nav ul li a {
@@ -307,17 +309,46 @@ li {
   text-shadow: 5px 5px 5px black;
 }
 
+@media (width < 760px) {
+  .secondary-nav ul {
+    padding: 20px;
+  }
+
+  .secondary-nav ul li a {
+    font-size: 16px;
+  }
+}
+
 .category-container {
   padding: 10px 40px;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; */
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
+  /* grid-auto-flow: row; */
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+@media (width > 500px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 900px) {
+  .category-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .img-card img {
-  height: 30vw;
-  width: 30vw;
+  height: 100%;
+  width: 100%;
   border-radius: 12px;
   object-fit: cover;
 }

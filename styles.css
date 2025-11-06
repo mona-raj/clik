@@ -82,7 +82,7 @@ li {
 .hero-tagline {
   position: absolute;
   z-index: 10;
-  bottom: 15%;
+  bottom: 8%;
   width: 100%;
 }
 
@@ -97,14 +97,25 @@ li {
 }
 
 .card-container {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100vw; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 50vh 50vh;
+}
+
+@media (width > 760px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 75vh;
+  }
 }
 
 .card {
-  height: 570px;
-  width: 346.2px;
+  /* height: 570px;
+  width: 346.2px; */
   color: white;
   background-size: cover;
 
@@ -112,8 +123,14 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 300px;
+  font-size: 180px;
   font-family: "Maharlika";
+}
+
+@media (width > 760px) {
+  .card {
+  font-size: 300px;
+  }
 }
 
 .card-one {
@@ -260,24 +277,6 @@ li {
 .btn-primary:hover,
 .btn-primary:focus {
   background: #b71c1c;
-}
-
-/* Make contact layout stack on smaller screens */
-@media (max-width: 880px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-form {
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .contact-info {
-    padding-bottom: 18px;
-  }
 }
 
 /* gallery styles */

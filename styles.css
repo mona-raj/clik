@@ -29,6 +29,16 @@ h2 {
   text-decoration-thickness: 6px;
 }
 
+@media (width < 760px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -219,6 +229,16 @@ li {
   display: flex;
   gap: 150px;
   align-items: center;
+}
+
+@media (width < 760px) {
+  .contact-section {
+    padding: 60px;
+  }
+
+  .contact-container {
+    flex-wrap: wrap;
+  }
 }
 
 .contact-info p {

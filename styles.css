@@ -444,7 +444,6 @@ li {
   /* overflow-y: scroll;
   overflow-x: scroll; */
   box-shadow: 5px 5px 2px 0px rgba(2, 2, 2, 0.579);
-
 }
 
 .img-popup-details {
@@ -487,8 +486,14 @@ li {
 
 .img-tag-container {
   display: flex;
-  height: 35px;
+  flex-wrap: wrap;
   gap: 10px;
+}
+
+.img-tag-container img {
+  height: 35px;
+  width: 35px;
+  object-fit: cover;
 }
 
 .img-tag {

@@ -17,10 +17,6 @@ function renderGallery() {
             <img src=${image.filename} alt=${image.title} data-category="${
           category.heading
         }" data-index="${index}"/>
-            <div class="img-card-overlay">
-              <h3>${image.title}</h3>
-              <button class="heart-btn">❤</button>
-            </div>
 
             <div class="img-popup" data-category="${
               category.heading
@@ -44,8 +40,12 @@ function renderGallery() {
                     .join("")}
                 </div>
                 <div class="img-popup-like-container">
-                  <button class="heart-btn active">❤</button>
-                  <span>${image.likes} likes</span>
+                  <button class="heart-btn" data-category="${
+                    category.heading
+                  }" data-index="${index}">❤</button>
+                  <span data-category="${
+                    category.heading
+                  }" data-index="${index}">${image.likes} likes</span>
                 </div>
               </div>
               <button class="img-popup-close-btn" data-category="${
@@ -95,5 +95,31 @@ function handlePopup() {
   });
 }
 
+function handleLikes() {
+  const heartButtons = document.querySelectorAll(".heart-btn");
+
+  Array.from(heartButtons).forEach((heartBtn) => {
+    const dataCategory = heartBtn.getAttribute("data-category");
+    const dataIndex = heartBtn.getAttribute("data-index");
+
+    heartBtn.addEventListener("click", () => {
+      const category = gallery.filter((cat) => cat.heading == dataCategory);
+      const image = category[0].images.filter((_, index) => index == dataIndex);
+      let likes = image[0].likes;
+
+      const isActive = heartBtn.classList.contains("active");
+      isActive ? likes : likes++;
+      heartBtn.classList.toggle("active");
+      console.log(likes + " likes");
+
+      const likeSpan = document.querySelector(
+        `.img-popup-like-container span[data-category="${dataCategory}"][data-index="${dataIndex}"]`
+      );
+      likeSpan.textContent = `${likes} likes`;
+    });
+  });
+}
+
 renderGallery();
 handlePopup();
+handleLikes();
